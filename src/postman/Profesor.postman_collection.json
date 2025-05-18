@@ -22,9 +22,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{{{url_base}}}}/profesores",
+					"raw": "{{url_base}}/profesores",
 					"host": [
-						"{{{{url_base}}}}"
+						"{{url_base}}"
 					],
 					"path": [
 						"profesores"
@@ -47,9 +47,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{{{url_base}}}}/profesores",
+							"raw": "{{url_base}}/profesores",
 							"host": [
-								"{{{{url_base}}}}"
+								"{{url_base}}"
 							],
 							"path": [
 								"profesores"
@@ -80,9 +80,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{{{url_base}}}}/profesores",
+					"raw": "{{url_base}}/profesores",
 					"host": [
-						"{{{{url_base}}}}"
+						"{{url_base}}"
 					],
 					"path": [
 						"profesores"
@@ -105,9 +105,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{{{url_base}}}}/profesores",
+							"raw": "{{url_base}}/profesores",
 							"host": [
-								"{{{{url_base}}}}"
+								"{{url_base}}"
 							],
 							"path": [
 								"profesores"
@@ -129,9 +129,9 @@
 				"method": "PATCH",
 				"header": [],
 				"url": {
-					"raw": "{{{{url_base}}}}/profesores/:id/asignar-evaluador/:id",
+					"raw": "{{url_base}}/profesores/:id/asignar-evaluador/:id",
 					"host": [
-						"{{{{url_base}}}}"
+						"{{url_base}}"
 					],
 					"path": [
 						"profesores",
@@ -169,9 +169,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{{{url_base}}}}/profesores/:id/asignar-evaluador/:id",
+							"raw": "{{url_base}}/profesores/:id/asignar-evaluador/:id",
 							"host": [
-								"{{{{url_base}}}}"
+								"{{url_base}}"
 							],
 							"path": [
 								"profesores",
@@ -202,9 +202,9 @@
 				"method": "PATCH",
 				"header": [],
 				"url": {
-					"raw": "{{{{url_base}}}}/profesores/:id/asignar-evaluador/:id",
+					"raw": "{{url_base}}/profesores/:id/asignar-evaluador/:id",
 					"host": [
-						"{{{{url_base}}}}"
+						"{{url_base}}"
 					],
 					"path": [
 						"profesores",
@@ -242,9 +242,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{{{url_base}}}}/profesores/:id/asignar-evaluador/:id",
+							"raw": "{{url_base}}/profesores/:id/asignar-evaluador/:id",
 							"host": [
-								"{{{{url_base}}}}"
+								"{{url_base}}"
 							],
 							"path": [
 								"profesores",

@@ -22,9 +22,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{{{url_base}}}}/evaluaciones",
+					"raw": "{{url_base}}/evaluaciones",
 					"host": [
-						"{{{{url_base}}}}"
+						"{{url_base}}"
 					],
 					"path": [
 						"evaluaciones"
@@ -47,9 +47,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{{{url_base}}}}/evaluaciones",
+							"raw": "{{url_base}}/evaluaciones",
 							"host": [
-								"{{{{url_base}}}}"
+								"{{url_base}}"
 							],
 							"path": [
 								"evaluaciones"
@@ -80,9 +80,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{{{url_base}}}}/estudiantes",
+					"raw": "{{url_base}}/estudiantes",
 					"host": [
-						"{{{{url_base}}}}"
+						"{{url_base}}"
 					],
 					"path": [
 						"estudiantes"
@@ -105,9 +105,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{{{url_base}}}}/estudiantes",
+							"raw": "{{url_base}}/estudiantes",
 							"host": [
-								"{{{{url_base}}}}"
+								"{{url_base}}"
 							],
 							"path": [
 								"estudiantes"

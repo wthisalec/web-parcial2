@@ -22,9 +22,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{{{url_base}}}}/proyectos",
+					"raw": "{{url_base}}/proyectos",
 					"host": [
-						"{{{{url_base}}}}"
+						"{{url_base}}"
 					],
 					"path": [
 						"proyectos"
@@ -47,9 +47,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{{{url_base}}}}/proyectos",
+							"raw": "{{url_base}}/proyectos",
 							"host": [
-								"{{{{url_base}}}}"
+								"{{url_base}}"
 							],
 							"path": [
 								"proyectos"
@@ -80,9 +80,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{{{url_base}}}}/proyectos",
+					"raw": "{{url_base}}/proyectos",
 					"host": [
-						"{{{{url_base}}}}"
+						"{{url_base}}"
 					],
 					"path": [
 						"proyectos"
@@ -105,9 +105,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{{{url_base}}}}/proyectos",
+							"raw": "{{url_base}}/proyectos",
 							"host": [
-								"{{{{url_base}}}}"
+								"{{url_base}}"
 							],
 							"path": [
 								"proyectos"
@@ -137,9 +137,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{{{url_base}}}}/proyectos/:id/avanzar",
+					"raw": "{{url_base}}/proyectos/:id/avanzar",
 					"host": [
-						"{{{{url_base}}}}"
+						"{{url_base}}"
 					],
 					"path": [
 						"proyectos",
@@ -170,9 +170,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{{{url_base}}}}/proyectos/:id/avanzar",
+							"raw": "{{url_base}}/proyectos/:id/avanzar",
 							"host": [
-								"{{{{url_base}}}}"
+								"{{url_base}}"
 							],
 							"path": [
 								"proyectos",
@@ -202,9 +202,9 @@
 				"method": "PATCH",
 				"header": [],
 				"url": {
-					"raw": "{{{{url_base}}}}/proyectos/:id/avanzar",
+					"raw": "{{url_base}}/proyectos/:id/avanzar",
 					"host": [
-						"{{{{url_base}}}}"
+						"{{url_base}}"
 					],
 					"path": [
 						"proyectos",
@@ -241,9 +241,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{{{url_base}}}}/proyectos/:id/avanzar",
+							"raw": "{{url_base}}/proyectos/:id/avanzar",
 							"host": [
-								"{{{{url_base}}}}"
+								"{{url_base}}"
 							],
 							"path": [
 								"proyectos",
@@ -273,9 +273,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{{{url_base}}}}/proyectos/:id/lider",
+					"raw": "{{url_base}}/proyectos/:id/lider",
 					"host": [
-						"{{{{url_base}}}}"
+						"{{url_base}}"
 					],
 					"path": [
 						"proyectos",
@@ -312,9 +312,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{{{url_base}}}}/proyectos/:id/lider",
+							"raw": "{{url_base}}/proyectos/:id/lider",
 							"host": [
-								"{{{{url_base}}}}"
+								"{{url_base}}"
 							],
 							"path": [
 								"proyectos",
@@ -344,9 +344,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{{{url_base}}}}/proyectos/:id/lider",
+					"raw": "{{url_base}}/proyectos/:id/lider",
 					"host": [
-						"{{{{url_base}}}}"
+						"{{url_base}}"
 					],
 					"path": [
 						"proyectos",
@@ -383,9 +383,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{{{url_base}}}}/proyectos/:id/lider",
+							"raw": "{{url_base}}/proyectos/:id/lider",
 							"host": [
-								"{{{{url_base}}}}"
+								"{{url_base}}"
 							],
 							"path": [
 								"proyectos",
