@@ -5,7 +5,7 @@ import { ProfesorEntity } from '../profesor/profesor.entity';
 
 @Entity()
 export class ProyectoEntity {
-    @PrimaryGeneratedColumn('uuid')
+    @PrimaryGeneratedColumn()
     id: Long;
 
     @Column()

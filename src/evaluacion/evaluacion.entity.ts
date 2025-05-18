@@ -4,7 +4,7 @@ import { ProyectoEntity } from '../proyecto/proyecto.entity';
 
 @Entity()
 export class EvaluacionEntity {
-    @PrimaryGeneratedColumn('uuid')
+    @PrimaryGeneratedColumn()
     id: Long;
 
     @ManyToOne(() => ProyectoEntity, proyecto => proyecto.evaluaciones)

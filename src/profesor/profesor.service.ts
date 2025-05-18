@@ -7,6 +7,8 @@ export class ProfesorService {
     constructor(
                 @InjectRepository(ProfesorEntity)
                 private readonly profesorRepository: Repository<ProfesorEntity>,
+
+                @InjectRepository(EvaluacionEntity)
                 private readonly evaluacionRepository: Repository<EvaluacionEntity>,    
             ) {}
     

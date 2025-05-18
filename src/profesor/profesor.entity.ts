@@ -4,7 +4,7 @@ import { ProyectoEntity } from '../proyecto/proyecto.entity';
 
 @Entity()
 export class ProfesorEntity {
-    @PrimaryGeneratedColumn('uuid')
+    @PrimaryGeneratedColumn()
     id: Long;
 
     @Column("int")

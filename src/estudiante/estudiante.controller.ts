@@ -1,13 +1,11 @@
-import { Body, Controller, Delete, HttpCode, Param, Post, UseInterceptors } from '@nestjs/common';
+import { Body, Controller, Delete, HttpCode, Param, Post } from '@nestjs/common';
 import { plainToInstance } from 'class-transformer';
-import { BusinessErrorsInterceptor } from 'src/shared/interceptors/business-errors/business-errors.interceptor';
 import { Long } from 'typeorm';
 import { EstudianteDto } from './estudiante.dto/estudiante.dto';
 import { EstudianteEntity } from './estudiante.entity';
 import { EstudianteService } from './estudiante.service';
 
 @Controller('estudiante')
-@UseInterceptors(BusinessErrorsInterceptor)
 export class EstudianteController {
 
     constructor(private readonly estudianteService: EstudianteService) {}
