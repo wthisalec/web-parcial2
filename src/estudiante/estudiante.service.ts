@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Long, Repository } from 'typeorm';
 import { EstudianteEntity } from './estudiante.entity';
@@ -13,7 +13,7 @@ export class EstudianteService {
     
     async create(estudiante: EstudianteEntity): Promise<EstudianteEntity> {
         if (estudiante.promedio <= 3.2 || estudiante.semestre < 4) {
-            throw new Error('El promedio debe ser mayor a 3.2 y el semestre igual o mayor a 4');
+            throw new BadRequestException('El promedio debe ser mayor a 3.2 y el semestre igual o mayor a 4');
         }
         return this.estudianteRepository.save(estudiante);
     }
@@ -21,11 +21,11 @@ export class EstudianteService {
     async delete(id: Long){
         const estudiante = await this.estudianteRepository.findOne({ where: { id } });
         if (!estudiante) {
-            throw new Error('Estudiante no encontrado');
+            throw new BadRequestException('Estudiante no encontrado');
         } else if (!estudiante.proyectos || estudiante.proyectos.length === 0) {
             await this.estudianteRepository.remove(estudiante);
         } else {
-            throw new Error('El estudiante tiene proyectos asociados y no se puede eliminar.');
+            throw new BadRequestException('El estudiante tiene proyectos asociados y no se puede eliminar.');
         }}
         
 }

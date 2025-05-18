@@ -6,7 +6,7 @@ import { ProfesorDto } from './profesor.dto/profesor.dto';
 import { ProfesorEntity } from './profesor.entity';
 import { ProfesorService } from './profesor.service';
 
-@Controller('profesor')
+@Controller('profesores')
 @UseInterceptors(BusinessErrorsInterceptor)
 export class ProfesorController {
 

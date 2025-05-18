@@ -6,7 +6,7 @@ import { ProyectoDto } from './proyecto.dto/proyecto.dto';
 import { ProyectoEntity } from './proyecto.entity';
 import { ProyectoService } from './proyecto.service';
 
-@Controller('proyecto')
+@Controller('proyectos')
 @UseInterceptors(BusinessErrorsInterceptor)
 export class ProyectoController {
 

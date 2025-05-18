@@ -5,7 +5,7 @@ import { EstudianteDto } from './estudiante.dto/estudiante.dto';
 import { EstudianteEntity } from './estudiante.entity';
 import { EstudianteService } from './estudiante.service';
 
-@Controller('estudiante')
+@Controller('estudiantes')
 export class EstudianteController {
 
     constructor(private readonly estudianteService: EstudianteService) {}

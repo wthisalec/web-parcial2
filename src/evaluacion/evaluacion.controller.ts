@@ -5,7 +5,7 @@ import { EvaluacionDto } from './evaluacion.dto/evaluacion.dto';
 import { EvaluacionEntity } from './evaluacion.entity';
 import { EvaluacionService } from './evaluacion.service';
 
-@Controller('evaluacion')
+@Controller('evaluaciones')
 @UseInterceptors(BusinessErrorsInterceptor)
 export class EvaluacionController {
 

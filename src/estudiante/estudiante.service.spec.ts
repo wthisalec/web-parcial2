@@ -64,7 +64,7 @@ describe('EstudianteService', () => {
       expect(storedEstudiante!.proyectos).toEqual(estudiante.proyectos)
     });
 
-    it('crear un nuevo estudiante', async () => {
+    it('no se puede crear un nuevo estudiante', async () => {
     const estudiante: EstudianteEntity = {
       id: 2 as any,
       nombre: faker.person.fullName(),
