@@ -25,6 +25,6 @@ export class ProfesorEntity {
     @OneToMany(() => ProyectoEntity, proyecto => proyecto.mentor)
     mentorias: ProyectoEntity[];
 
-    @OneToMany(() => EvaluacionEntity, proyecto => proyecto.profesor)
+    @OneToMany(() => EvaluacionEntity, proyecto => proyecto.evaluador)
     evaluaciones: EvaluacionEntity[];
 }

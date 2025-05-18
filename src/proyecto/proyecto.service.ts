@@ -1,5 +1,5 @@
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { Long, Repository } from 'typeorm';
 import { ProyectoEntity } from './proyecto.entity';
 
 export class ProyectoService {
@@ -7,7 +7,7 @@ export class ProyectoService {
                 @InjectRepository(ProyectoEntity)
                 private readonly proyectoRepository: Repository<ProyectoEntity>, 
             ) {}
-    async crearProyecto(proyecto: Partial<ProyectoEntity>): Promise<ProyectoEntity> {
+    async crearProyecto(proyecto: ProyectoEntity): Promise<ProyectoEntity> {
         if (!proyecto.titulo || proyecto.titulo.length <= 15) {
             throw new Error('El título debe tener más de 15 caracteres');
         }
@@ -19,7 +19,7 @@ export class ProyectoService {
         }
     }
 
-    async avanzarProyecto(id: number): Promise<ProyectoEntity> {
+    async avanzarProyecto(id: Long): Promise<ProyectoEntity> {
         const proyecto = await this.proyectoRepository.findOne({ where: { id } });
         if (!proyecto) {
             throw new Error('Proyecto no encontrado');
@@ -33,7 +33,7 @@ export class ProyectoService {
         }
     }
 
-    async findAllEstudiantes(id: number): Promise<any> {
+    async findAllEstudiantes(id: Long): Promise<any> {
         const proyecto = await this.proyectoRepository.findOne({ where: { id }});
         if (!proyecto) {
             throw new Error('Proyecto no encontrado');
