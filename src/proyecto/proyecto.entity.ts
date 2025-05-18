@@ -29,12 +29,12 @@ export class ProyectoEntity {
     @Column()
     fechafin: string;
 
-    @ManyToOne(() => EstudianteEntity, estudiante => estudiante.proyectos)
-    lider: EstudianteEntity;
+    @ManyToOne(() => EstudianteEntity, estudiante => estudiante.proyectos, {nullable: true})
+    lider?: EstudianteEntity;
 
-    @ManyToOne(() => ProfesorEntity, profesor => profesor.mentorias)
-    mentor: ProfesorEntity;
+    @ManyToOne(() => ProfesorEntity, profesor => profesor.mentorias, {nullable: true})
+    mentor?: ProfesorEntity;
 
-    @OneToMany(() => EvaluacionEntity, proyecto => proyecto.proyecto)
-    evaluaciones: EvaluacionEntity[];
+    @OneToMany(() => EvaluacionEntity, proyecto => proyecto.proyecto, {nullable: true})
+    evaluaciones?: EvaluacionEntity[];
 }

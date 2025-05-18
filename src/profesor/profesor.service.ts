@@ -26,15 +26,18 @@ export class ProfesorService {
             throw new Error('Profesor no encontrado');
         }
 
-        const cantidadEvaluaciones = profesor.evaluaciones.length;
+        if (!profesor.evaluaciones){
+            profesor.evaluaciones = [];
+        }
 
-        if (cantidadEvaluaciones >= 3) {
+
+        if (profesor.evaluaciones?.length?? 0 >= 3) {
             throw new Error('Este profesor ya tiene 3 o más evaluaciones');
         }
 
         const evaluacion = await this.evaluacionRepository.findOne({ where: { id: evaluacionId } });
         if (evaluacion) {
-            profesor.evaluaciones.push({ evaluacion } as any);
+            profesor.evaluaciones.push(evaluacion as any);
         }
         else{
             throw new Error('Evaluación no encontrada');

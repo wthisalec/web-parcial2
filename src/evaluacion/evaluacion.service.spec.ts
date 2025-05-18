@@ -89,11 +89,11 @@ describe('EvaluacionService', () => {
 
     const storedEvaluacion: EvaluacionEntity | null = await repository.findOne({ where: { id: newEvaluacion.id }, relations: ['proyecto', 'evaluador'] });
     expect(storedEvaluacion).not.toBeNull();
-    expect(storedEvaluacion!.evaluador.id).toEqual(newEvaluacion.evaluador.id);
-    expect(storedEvaluacion!.proyecto.id).toEqual(newEvaluacion.proyecto.id);
+    expect(storedEvaluacion!.evaluador!.id).toEqual(newEvaluacion.evaluador!.id);
+    expect(storedEvaluacion!.proyecto!.id).toEqual(newEvaluacion.proyecto!.id);
   });
 
-  it('crear una nueva evaluacion', async () => {
+  it('no se puede crear una nueva evaluacion', async () => {
     const profesor = await profesorRepository.save({
       id: 1 as any,
       nombre: faker.person.fullName(),

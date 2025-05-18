@@ -7,10 +7,10 @@ export class EvaluacionEntity {
     @PrimaryGeneratedColumn()
     id: Long;
 
-    @ManyToOne(() => ProyectoEntity, proyecto => proyecto.evaluaciones)
-    proyecto: ProyectoEntity;
+    @ManyToOne(() => ProyectoEntity, proyecto => proyecto.evaluaciones, {nullable: true})
+    proyecto?: ProyectoEntity;
 
-    @ManyToOne(() => ProfesorEntity, profesor => profesor.evaluaciones)
-    evaluador: ProfesorEntity;
+    @ManyToOne(() => ProfesorEntity, profesor => profesor.evaluaciones, {nullable: true})
+    evaluador?: ProfesorEntity;
 
 }
