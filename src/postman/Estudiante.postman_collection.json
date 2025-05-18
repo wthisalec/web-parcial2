@@ -1,0 +1,238 @@
+{
+	"info": {
+		"_postman_id": "8fcbd7c6-8277-49d2-8ae8-11444ddfe04e",
+		"name": "Estudiante",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44478874",
+		"_collection_link": "https://alejandro-4590710.postman.co/workspace/c3a61cee-83f4-48b4-8100-b3fb099e9ef4/collection/44478874-8fcbd7c6-8277-49d2-8ae8-11444ddfe04e?action=share&source=collection_link&creator=44478874"
+	},
+	"item": [
+		{
+			"name": "CrearEstudiante",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Alejandro Charry\",\r\n  \"cedula\": 1090366478,\r\n  \"semestre\": 7,\r\n  \"programa\": \"Ingeniería de Sistemas\",\r\n  \"promedio\": 375\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{{{url_base}}}}/estudiantes",
+					"host": [
+						"{{{{url_base}}}}"
+					],
+					"path": [
+						"estudiantes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "CrearEstudiante",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n  \"nombre\": \"Alejandro Charry\",\r\n  \"cedula\": 1090366478,\r\n  \"semestre\": 7,\r\n  \"programa\": \"Ingeniería de Sistemas\",\r\n  \"promedio\": 375,\r\n  \"proyectos\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{{{url_base}}}}/estudiantes",
+							"host": [
+								"{{{{url_base}}}}"
+							],
+							"path": [
+								"estudiantes"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "CrearEstudianteInvalido",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Luis Pérez\",\r\n  \"cedula\": 123456789,\r\n  \"semestre\": 2,\r\n  \"programa\": \"Ingeniería Química\",\r\n  \"promedio\": 2.9\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{{{url_base}}}}/estudiantes",
+					"host": [
+						"{{{{url_base}}}}"
+					],
+					"path": [
+						"estudiantes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "CrearEstudianteInvalido",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"statusCode\": 400,\r\n  \"message\": \"El promedio debe ser mayor a 3.2 y el semestre igual o mayor a 4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{{{url_base}}}}/estudiantes",
+							"host": [
+								"{{{{url_base}}}}"
+							],
+							"path": [
+								"estudiantes"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "EliminarEstudiante",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{{{url_base}}}}/estudiantes/:id",
+					"host": [
+						"{{{{url_base}}}}"
+					],
+					"path": [
+						"estudiantes",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "EliminarEstudiante",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{{{url_base}}}}/estudiantes/:id",
+							"host": [
+								"{{{{url_base}}}}"
+							],
+							"path": [
+								"estudiantes",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "EliminarEstudianteInvalido",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{{{url_base}}}}/estudiantes/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{{{url_base}}}}"
+					],
+					"path": [
+						"estudiantes",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "EliminarEstudianteInvalido",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"statusCode\": 404,\r\n   \"message\": \"Estudiante no encontrado\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{{{url_base}}}}/estudiantes/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{{{url_base}}}}"
+							],
+							"path": [
+								"estudiantes",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}

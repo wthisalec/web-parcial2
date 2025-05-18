@@ -88,14 +88,12 @@ describe('EstudianteService', () => {
       expect(deletedEstudiante).toBeNull();
     });
 
-    it('eliminar un estudiante con proyectos asociados', async () => {
-      const estudiante: EstudianteEntity = estudianteList[0];
-      estudiante.proyectos = [];
-      await repository.save(estudiante);
+    it('no se puede eliminar porque no se encuentra el estudiante', async () => {
+      const nonExistentId = 99999 as any;
       try {
-        await service.delete(estudiante.id);
+      await service.delete(nonExistentId);
       } catch (e) {
-        expect(e.message).toEqual('El estudiante tiene proyectos asociados y no se puede eliminar.');
+      expect(e.message).toEqual('Estudiante no encontrado');
       }
     });
 

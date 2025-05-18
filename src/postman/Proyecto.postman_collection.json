@@ -1,0 +1,413 @@
+{
+	"info": {
+		"_postman_id": "4d426a3e-2d08-4876-93fb-aab75b8faea9",
+		"name": "Proyecto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44478874",
+		"_collection_link": "https://alejandro-4590710.postman.co/workspace/c3a61cee-83f4-48b4-8100-b3fb099e9ef4/collection/44478874-4d426a3e-2d08-4876-93fb-aab75b8faea9?action=share&source=collection_link&creator=44478874"
+	},
+	"item": [
+		{
+			"name": "CrearProyecto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titulo\": \"Título del proyecto con más de 15 caracteres\",\r\n  \"area\": \"Área del proyecto\",\r\n  \"presupuesto\": 5000,\r\n  \"notafinal\": 3,\r\n  \"estado\": 1,\r\n  \"fechainicio\": \"2023-01-01T00:00:00.000Z\",\r\n  \"fechafin\": \"2026-01-01T00:00:00.000Z\",\r\n  \"evaluaciones\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{{{url_base}}}}/proyectos",
+					"host": [
+						"{{{{url_base}}}}"
+					],
+					"path": [
+						"proyectos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "CrearProyecto",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1,\r\n  \"titulo\": \"Título del proyecto con más de 15 caracteres\",\r\n  \"area\": \"Área del proyecto\",\r\n  \"presupuesto\": 5000,\r\n  \"notafinal\": 3,\r\n  \"estado\": 1,\r\n  \"fechainicio\": \"2023-01-01T00:00:00.000Z\",\r\n  \"fechafin\": \"2026-01-01T00:00:00.000Z\",\r\n  \"evaluaciones\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{{{url_base}}}}/proyectos",
+							"host": [
+								"{{{{url_base}}}}"
+							],
+							"path": [
+								"proyectos"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "CrearProyectoInvalido",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titulo\": \"proyecto\",\r\n  \"area\": \"Área del proyecto\",\r\n  \"presupuesto\": 5000,\r\n  \"notafinal\": 3,\r\n  \"estado\": 1,\r\n  \"fechainicio\": \"2023-01-01T00:00:00.000Z\",\r\n  \"fechafin\": \"2024-01-01T00:00:00.000Z\",\r\n  \"evaluaciones\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{{{url_base}}}}/proyectos",
+					"host": [
+						"{{{{url_base}}}}"
+					],
+					"path": [
+						"proyectos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "CrearProyectoInvalido",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"statusCode\": 400,\r\n  \"message\": \"El título debe tener más de 15 caracteres\",\r\n  \"error\": \"Bad Request\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{{{url_base}}}}/proyectos",
+							"host": [
+								"{{{{url_base}}}}"
+							],
+							"path": [
+								"proyectos"
+							]
+						}
+					},
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "AvanzarProyecto",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titulo\": \"Investigación avanzada en inteligencia artificial\",\r\n  \"area\": \"Inteligencia Artificial\",\r\n  \"presupuesto\": 8000,\r\n  \"notafinal\": 3,\r\n  \"estado\": 1,\r\n  \"fechainicio\": \"2023-01-01T00:00:00.000Z\",\r\n  \"fechafin\": \"2024-01-01T00:00:00.000Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{{{url_base}}}}/proyectos/:id/avanzar",
+					"host": [
+						"{{{{url_base}}}}"
+					],
+					"path": [
+						"proyectos",
+						":id",
+						"avanzar"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "AvanzarProyecto",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"titulo\": \"Investigación avanzada en inteligencia artificial\",\r\n  \"area\": \"Inteligencia Artificial\",\r\n  \"presupuesto\": 8000,\r\n  \"notafinal\": 3,\r\n  \"estado\": 2,\r\n  \"fechainicio\": \"2023-01-01T00:00:00.000Z\",\r\n  \"fechafin\": \"2024-01-01T00:00:00.000Z\",\r\n  \"evaluaciones\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{{{url_base}}}}/proyectos/:id/avanzar",
+							"host": [
+								"{{{{url_base}}}}"
+							],
+							"path": [
+								"proyectos",
+								":id",
+								"avanzar"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "AvanzarProyectoInvalido",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{{{url_base}}}}/proyectos/:id/avanzar",
+					"host": [
+						"{{{{url_base}}}}"
+					],
+					"path": [
+						"proyectos",
+						":id",
+						"avanzar"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "AvanzarProyectoInvalido",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"statusCode\": 400,\r\n  \"message\": \"El proyecto ya está en su máximo estado\",\r\n  \"error\": \"Bad Request\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{{{url_base}}}}/proyectos/:id/avanzar",
+							"host": [
+								"{{{{url_base}}}}"
+							],
+							"path": [
+								"proyectos",
+								":id",
+								"avanzar"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "ObtenerEstudiantes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{{{url_base}}}}/proyectos/:id/lider",
+					"host": [
+						"{{{{url_base}}}}"
+					],
+					"path": [
+						"proyectos",
+						":id",
+						"lider"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ObtenerEstudiantes",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n  \"nombre\": \"Alejandro Charry\",\r\n  \"cedula\": 1090366478,\r\n  \"semestre\": 7,\r\n  \"programa\": \"Ingeniería de Sistemas\",\r\n  \"promedio\": 375,\r\n  \"proyectos\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{{{url_base}}}}/proyectos/:id/lider",
+							"host": [
+								"{{{{url_base}}}}"
+							],
+							"path": [
+								"proyectos",
+								":id",
+								"lider"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "ObtenerEstudiantesInvalido",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{{{url_base}}}}/proyectos/:id/lider",
+					"host": [
+						"{{{{url_base}}}}"
+					],
+					"path": [
+						"proyectos",
+						":id",
+						"lider"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ObtenerEstudiantesInvalido",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"statusCode\": 404,\r\n  \"message\": \"Proyecto no encontrado\",\r\n  \"error\": \"Not Found\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{{{url_base}}}}/proyectos/:id/lider",
+							"host": [
+								"{{{{url_base}}}}"
+							],
+							"path": [
+								"proyectos",
+								":id",
+								"lider"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}

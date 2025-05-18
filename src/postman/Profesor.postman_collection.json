@@ -1,0 +1,273 @@
+{
+	"info": {
+		"_postman_id": "58e5aaff-2de0-45fd-bd81-9c6809b9b926",
+		"name": "Profesor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44478874",
+		"_collection_link": "https://alejandro-4590710.postman.co/workspace/c3a61cee-83f4-48b4-8100-b3fb099e9ef4/collection/44478874-58e5aaff-2de0-45fd-bd81-9c6809b9b926?action=share&source=collection_link&creator=44478874"
+	},
+	"item": [
+		{
+			"name": "CrearProfesor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Luis Contreras\",\r\n  \"cedula\": 1056325478,\r\n  \"departamento\": \"Ciencias Computacionales\",\r\n  \"extension\": 12345,\r\n  \"esParEvaluador\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{{{url_base}}}}/profesores",
+					"host": [
+						"{{{{url_base}}}}"
+					],
+					"path": [
+						"profesores"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "CrearProfesor",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"nombre\": \"Luis Contreras\",\r\n  \"cedula\": 1056325478,\r\n  \"departamento\": \"Ciencias Computacionales\",\r\n  \"extension\": 12345,\r\n  \"esParEvaluador\": false,\r\n  \"mentorias\": [],\r\n  \"evaluaciones\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{{{url_base}}}}/profesores",
+							"host": [
+								"{{{{url_base}}}}"
+							],
+							"path": [
+								"profesores"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "CrearProfesorInvalido",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"María Herrera\",\r\n  \"cedula\": 1056999999,\r\n  \"departamento\": \"Matemáticas\",\r\n  \"extension\": 123456,\r\n  \"esParEvaluador\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{{{url_base}}}}/profesores",
+					"host": [
+						"{{{{url_base}}}}"
+					],
+					"path": [
+						"profesores"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "CrearProfesorInvalido",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"statusCode\": 400,\r\n  \"message\": \"La extensión debe tener exactamente 5 dígitos\",\r\n  \"error\": \"Bad Request\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{{{url_base}}}}/profesores",
+							"host": [
+								"{{{{url_base}}}}"
+							],
+							"path": [
+								"profesores"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "AsignarEvaluador",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{{{url_base}}}}/profesores/:id/asignar-evaluador/:id",
+					"host": [
+						"{{{{url_base}}}}"
+					],
+					"path": [
+						"profesores",
+						":id",
+						"asignar-evaluador",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "AsignarEvaluador",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"evaluaciones\": [\r\n    {\r\n      \"id\": 1,\r\n      \"proyecto\": {\r\n        \"id\": 4,\r\n        \"titulo\": \"Sistema de Gestión Académica\"\r\n      },\r\n      \"evaluador\": {\r\n        \"id\": 1,\r\n        \"nombre\": \"Carlos Pérez\"\r\n      }\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{{{url_base}}}}/profesores/:id/asignar-evaluador/:id",
+							"host": [
+								"{{{{url_base}}}}"
+							],
+							"path": [
+								"profesores",
+								":id",
+								"asignar-evaluador",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "AsignarEvaluadorInvalido",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{{{url_base}}}}/profesores/:id/asignar-evaluador/:id",
+					"host": [
+						"{{{{url_base}}}}"
+					],
+					"path": [
+						"profesores",
+						":id",
+						"asignar-evaluador",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "AsignarEvaluador",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"statusCode\": 404,\r\n  \"message\": \"Evaluación no encontrada\",\r\n  \"error\": \"Not Found\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{{{url_base}}}}/profesores/:id/asignar-evaluador/:id",
+							"host": [
+								"{{{{url_base}}}}"
+							],
+							"path": [
+								"profesores",
+								":id",
+								"asignar-evaluador",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}

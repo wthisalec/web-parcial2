@@ -1,0 +1,127 @@
+{
+	"info": {
+		"_postman_id": "a2f0f25e-a161-411e-b0d6-500fde2af878",
+		"name": "Evaluacion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44478874",
+		"_collection_link": "https://alejandro-4590710.postman.co/workspace/c3a61cee-83f4-48b4-8100-b3fb099e9ef4/collection/44478874-a2f0f25e-a161-411e-b0d6-500fde2af878?action=share&source=collection_link&creator=44478874"
+	},
+	"item": [
+		{
+			"name": "CrearEvaluacion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"proyectoId\": 4,\r\n  \"evaluadorId\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{{{url_base}}}}/evaluaciones",
+					"host": [
+						"{{{{url_base}}}}"
+					],
+					"path": [
+						"evaluaciones"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "CrearEvaluacion",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 5,\r\n  \"proyecto\": {\r\n    \"id\": 4,\r\n    \"titulo\": \"Proyecto ejemplo\"\r\n  },\r\n  \"evaluador\": {\r\n    \"id\": 2,\r\n    \"nombre\": \"Carlos Parra\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{{{url_base}}}}/evaluaciones",
+							"host": [
+								"{{{{url_base}}}}"
+							],
+							"path": [
+								"evaluaciones"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "CrearEvaluacionInvalida",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"proyectoId\": 4,\r\n  \"evaluadorId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{{{url_base}}}}/estudiantes",
+					"host": [
+						"{{{{url_base}}}}"
+					],
+					"path": [
+						"estudiantes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "CrearEvaluacionInvalida",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"statusCode\": 400,\r\n  \"message\": \"El proyecto no puede ser evaluado por su mentor\",\r\n  \"error\": \"Bad Request\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{{{url_base}}}}/estudiantes",
+							"host": [
+								"{{{{url_base}}}}"
+							],
+							"path": [
+								"estudiantes"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}
