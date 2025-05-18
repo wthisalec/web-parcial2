@@ -1,6 +1,6 @@
 import { Column, Entity, Long, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
-import { EvaluacionEntity } from '../evaluacion.entity/evaluacion.entity';
-import { ProyectoEntity } from '../proyecto.entity/proyecto.entity';
+import { EvaluacionEntity } from '../evaluacion/evaluacion.entity';
+import { ProyectoEntity } from '../proyecto/proyecto.entity';
 
 @Entity()
 export class ProfesorEntity {

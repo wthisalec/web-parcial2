@@ -1,7 +1,7 @@
 import { Column, Entity, Long, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
-import { EstudianteEntity } from '../estudiante.entity/estudiante.entity';
-import { EvaluacionEntity } from '../evaluacion.entity/evaluacion.entity';
-import { ProfesorEntity } from '../profesor.entity/profesor.entity';
+import { EstudianteEntity } from '../estudiante/estudiante.entity';
+import { EvaluacionEntity } from '../evaluacion/evaluacion.entity';
+import { ProfesorEntity } from '../profesor/profesor.entity';
 
 @Entity()
 export class ProyectoEntity {

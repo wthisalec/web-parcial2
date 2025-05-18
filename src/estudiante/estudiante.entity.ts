@@ -1,5 +1,5 @@
 import { Column, Entity, Long, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
-import { ProyectoEntity } from '../proyecto.entity/proyecto.entity';
+import { ProyectoEntity } from '../proyecto/proyecto.entity';
 
 
 @Entity()
@@ -15,7 +15,7 @@ nombre: string;
 cedula: number;
 
 @Column("int")
-semestre: string;
+semestre: number;
 
 @Column()
 programa: string;

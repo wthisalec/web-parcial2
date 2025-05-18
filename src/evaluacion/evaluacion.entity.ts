@@ -1,6 +1,6 @@
 import { Entity, Long, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
-import { ProfesorEntity } from '../profesor.entity/profesor.entity';
-import { ProyectoEntity } from '../proyecto.entity/proyecto.entity';
+import { ProfesorEntity } from '../profesor/profesor.entity';
+import { ProyectoEntity } from '../proyecto/proyecto.entity';
 
 @Entity()
 export class EvaluacionEntity {
@@ -11,6 +11,6 @@ export class EvaluacionEntity {
     proyecto: ProyectoEntity;
 
     @ManyToOne(() => ProfesorEntity, profesor => profesor.evaluaciones)
-    profesor: ProfesorEntity;
+    evaluador: ProfesorEntity;
 
 }

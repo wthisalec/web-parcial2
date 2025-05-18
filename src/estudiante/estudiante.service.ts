@@ -1,6 +1,6 @@
 import { InjectRepository } from '@nestjs/typeorm';
-import { EstudianteEntity } from 'src/estudiante.entity/estudiante.entity';
 import { Long, Repository } from 'typeorm';
+import { EstudianteEntity } from './estudiante.entity';
 
 
 export class EstudianteService {
@@ -11,6 +11,9 @@ export class EstudianteService {
     ) {}
     
     async create(estudiante: EstudianteEntity): Promise<EstudianteEntity> {
+        if (estudiante.promedio <= 3.2 || estudiante.semestre < 4) {
+            throw new Error('El promedio debe ser mayor a 3.2 y el semestre igual o mayor a 4');
+        }
         return this.estudianteRepository.save(estudiante);
     }
 
