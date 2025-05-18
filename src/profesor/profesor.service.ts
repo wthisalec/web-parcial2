@@ -1,3 +1,4 @@
+import { BadRequestException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Long, Repository } from 'typeorm';
 import { EvaluacionEntity } from '../evaluacion/evaluacion.entity';
@@ -14,7 +15,7 @@ export class ProfesorService {
     
     async create(profesor: ProfesorEntity): Promise<ProfesorEntity> {
         if (profesor.extension.toString().length !== 5) {
-            throw new Error('La extensión debe tener exactamente 5 dígitos');
+            throw new BadRequestException('La extensión debe tener exactamente 5 dígitos');
         } else{
                 return this.profesorRepository.save(profesor);
             }}
@@ -23,7 +24,7 @@ export class ProfesorService {
         const profesor = await this.profesorRepository.findOne({ where: { id: profesorId } });
 
         if (!profesor) {
-            throw new Error('Profesor no encontrado');
+            throw new BadRequestException('Profesor no encontrado');
         }
 
         if (!profesor.evaluaciones){
@@ -32,7 +33,7 @@ export class ProfesorService {
 
 
         if (profesor.evaluaciones?.length?? 0 >= 3) {
-            throw new Error('Este profesor ya tiene 3 o más evaluaciones');
+            throw new BadRequestException('Este profesor ya tiene 3 o más evaluaciones');
         }
 
         const evaluacion = await this.evaluacionRepository.findOne({ where: { id: evaluacionId } });
@@ -40,7 +41,7 @@ export class ProfesorService {
             profesor.evaluaciones.push(evaluacion as any);
         }
         else{
-            throw new Error('Evaluación no encontrada');
+            throw new BadRequestException('Evaluación no encontrada');
         }
 
         return this.profesorRepository.save(profesor);

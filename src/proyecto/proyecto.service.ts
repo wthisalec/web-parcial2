@@ -1,3 +1,4 @@
+import { BadRequestException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Long, Repository } from 'typeorm';
 import { ProyectoEntity } from './proyecto.entity';
@@ -9,10 +10,10 @@ export class ProyectoService {
             ) {}
     async crearProyecto(proyecto: ProyectoEntity): Promise<ProyectoEntity> {
         if (!proyecto.titulo || proyecto.titulo.length <= 15) {
-            throw new Error('El título debe tener más de 15 caracteres');
+            throw new BadRequestException('El título debe tener más de 15 caracteres');
         }
         if (typeof proyecto.presupuesto !== 'number' || proyecto.presupuesto <= 0){
-            throw new Error('El presupuesto debe ser mayor que 0');
+            throw new BadRequestException('El presupuesto debe ser mayor que 0');
         }
         else{
             return await this.proyectoRepository.save(proyecto);
@@ -22,10 +23,10 @@ export class ProyectoService {
     async avanzarProyecto(id: Long): Promise<ProyectoEntity> {
         const proyecto = await this.proyectoRepository.findOne({ where: { id } });
         if (!proyecto) {
-            throw new Error('Proyecto no encontrado');
+            throw new BadRequestException('Proyecto no encontrado');
         }
         if (proyecto.estado >= 4) {
-            throw new Error('El proyecto ya está en su máximo estado');
+            throw new BadRequestException('El proyecto ya está en su máximo estado');
         }
         else{
             proyecto.estado += 1;
@@ -34,9 +35,9 @@ export class ProyectoService {
     }
 
     async findAllEstudiantes(id: Long): Promise<any> {
-        const proyecto = await this.proyectoRepository.findOne({ where: { id }});
+        const proyecto = await this.proyectoRepository.findOne({ where: { id }, relations: ['lider']});
         if (!proyecto) {
-            throw new Error('Proyecto no encontrado');
+            throw new BadRequestException('Proyecto no encontrado');
         }
         return proyecto.lider;
     }

@@ -14,7 +14,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"proyectoId\": 4,\r\n  \"evaluadorId\": 2\r\n}",
+					"raw": "{\r\n  \"proyecto\": {\r\n    \"id\":1,\r\n  \"titulo\": \"Título del proyecto con más de 15 caracteres\",\r\n  \"area\": \"Área del proyecto\",\r\n  \"presupuesto\": 5000,\r\n  \"notafinal\": 3,\r\n  \"estado\": 4,\r\n  \"fechainicio\": \"2023-01-01T00:00:00.000Z\",\r\n  \"fechafin\": \"2026-01-01T00:00:00.000Z\",\r\n  \"evaluaciones\": [],\r\n  \"mentor\":{\r\n    \"id\":1,\r\n  \"nombre\": \"Luis Contreras\",\r\n  \"cedula\": 1056325478,\r\n  \"departamento\": \"Ciencias Computacionales\",\r\n  \"extension\": 12345,\r\n  \"esParEvaluador\": false\r\n},\r\n  \"lider\":{\r\n    \"id\": 1,\r\n  \"nombre\": \"Alejandro Charry\",\r\n  \"cedula\": 1090366478,\r\n  \"semestre\": 7,\r\n  \"programa\": \"Ingeniería de Sistemas\",\r\n  \"promedio\": 375,\r\n  \"proyectos\": []\r\n}\r\n},\r\n  \"evaluador\": {\r\n    \"id\":2,\r\n  \"nombre\": \"Luis Contreras\",\r\n  \"cedula\": 1056325478,\r\n  \"departamento\": \"Ciencias Computacionales\",\r\n  \"extension\": 12345,\r\n  \"esParEvaluador\": false\r\n  }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -72,7 +72,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"proyectoId\": 4,\r\n  \"evaluadorId\": 1\r\n}",
+					"raw": "{\r\n  \"proyecto\": {\r\n    \"id\":1,\r\n  \"titulo\": \"Título del proyecto con más de 15 caracteres\",\r\n  \"area\": \"Área del proyecto\",\r\n  \"presupuesto\": 5000,\r\n  \"notafinal\": 3,\r\n  \"estado\": 4,\r\n  \"fechainicio\": \"2023-01-01T00:00:00.000Z\",\r\n  \"fechafin\": \"2026-01-01T00:00:00.000Z\",\r\n  \"evaluaciones\": [],\r\n  \"mentor\":{\r\n    \"id\":1,\r\n  \"nombre\": \"Luis Contreras\",\r\n  \"cedula\": 1056325478,\r\n  \"departamento\": \"Ciencias Computacionales\",\r\n  \"extension\": 12345,\r\n  \"esParEvaluador\": false\r\n},\r\n  \"lider\":{\r\n    \"id\": 1,\r\n  \"nombre\": \"Alejandro Charry\",\r\n  \"cedula\": 1090366478,\r\n  \"semestre\": 7,\r\n  \"programa\": \"Ingeniería de Sistemas\",\r\n  \"promedio\": 375,\r\n  \"proyectos\": []\r\n}\r\n},\r\n  \"evaluador\": {\r\n    \"id\":1,\r\n  \"nombre\": \"Luis Contreras\",\r\n  \"cedula\": 1056325478,\r\n  \"departamento\": \"Ciencias Computacionales\",\r\n  \"extension\": 12345,\r\n  \"esParEvaluador\": false\r\n  }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -80,12 +80,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{url_base}}/estudiantes",
+					"raw": "{{url_base}}/evaluaciones",
 					"host": [
 						"{{url_base}}"
 					],
 					"path": [
-						"estudiantes"
+						"evaluaciones"
 					]
 				}
 			},

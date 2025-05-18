@@ -14,7 +14,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"titulo\": \"Título del proyecto con más de 15 caracteres\",\r\n  \"area\": \"Área del proyecto\",\r\n  \"presupuesto\": 5000,\r\n  \"notafinal\": 3,\r\n  \"estado\": 1,\r\n  \"fechainicio\": \"2023-01-01T00:00:00.000Z\",\r\n  \"fechafin\": \"2026-01-01T00:00:00.000Z\",\r\n  \"evaluaciones\": []\r\n}",
+					"raw": "{\r\n  \"titulo\": \"Título del proyecto con más de 15 caracteres\",\r\n  \"area\": \"Área del proyecto\",\r\n  \"presupuesto\": 5000,\r\n  \"notafinal\": 3,\r\n  \"estado\": 4,\r\n  \"fechainicio\": \"2023-01-01T00:00:00.000Z\",\r\n  \"fechafin\": \"2026-01-01T00:00:00.000Z\",\r\n  \"evaluaciones\": [],\r\n  \"lider\":{\r\n    \"id\": 1,\r\n  \"nombre\": \"Alejandro Charry\",\r\n  \"cedula\": 1090366478,\r\n  \"semestre\": 7,\r\n  \"programa\": \"Ingeniería de Sistemas\",\r\n  \"promedio\": 375,\r\n  \"proyectos\": []\r\n}\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -125,11 +125,11 @@
 		{
 			"name": "AvanzarProyecto",
 			"request": {
-				"method": "PATCH",
+				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"titulo\": \"Investigación avanzada en inteligencia artificial\",\r\n  \"area\": \"Inteligencia Artificial\",\r\n  \"presupuesto\": 8000,\r\n  \"notafinal\": 3,\r\n  \"estado\": 1,\r\n  \"fechainicio\": \"2023-01-01T00:00:00.000Z\",\r\n  \"fechafin\": \"2024-01-01T00:00:00.000Z\"\r\n}",
+					"raw": "{\r\n    \"proyectoId\": 1\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -137,20 +137,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{url_base}}/proyectos/:id/avanzar",
+					"raw": "{{url_base}}/proyectos/proyectoId",
 					"host": [
 						"{{url_base}}"
 					],
 					"path": [
 						"proyectos",
-						":id",
-						"avanzar"
-					],
-					"variable": [
-						{
-							"key": "id",
-							"value": ""
-						}
+						"proyectoId"
 					]
 				}
 			},
@@ -199,23 +192,25 @@
 		{
 			"name": "AvanzarProyectoInvalido",
 			"request": {
-				"method": "PATCH",
+				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"proyectoId\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "{{url_base}}/proyectos/:id/avanzar",
+					"raw": "{{url_base}}/proyectos/proyectoId",
 					"host": [
 						"{{url_base}}"
 					],
 					"path": [
 						"proyectos",
-						":id",
-						"avanzar"
-					],
-					"variable": [
-						{
-							"key": "id",
-							"value": ""
-						}
+						"proyectoId"
 					]
 				}
 			},
@@ -269,24 +264,29 @@
 		},
 		{
 			"name": "ObtenerEstudiantes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"proyectoId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "{{url_base}}/proyectos/:id/lider",
+					"raw": "{{url_base}}/proyectos/proyectoId",
 					"host": [
 						"{{url_base}}"
 					],
 					"path": [
 						"proyectos",
-						":id",
-						"lider"
-					],
-					"variable": [
-						{
-							"key": "id",
-							"value": ""
-						}
+						"proyectoId"
 					]
 				}
 			},
@@ -340,24 +340,29 @@
 		},
 		{
 			"name": "ObtenerEstudiantesInvalido",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"proyectoId\":7\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "{{url_base}}/proyectos/:id/lider",
+					"raw": "{{url_base}}/proyectos/proyectoId",
 					"host": [
 						"{{url_base}}"
 					],
 					"path": [
 						"proyectos",
-						":id",
-						"lider"
-					],
-					"variable": [
-						{
-							"key": "id",
-							"value": ""
-						}
+						"proyectoId"
 					]
 				}
 			},

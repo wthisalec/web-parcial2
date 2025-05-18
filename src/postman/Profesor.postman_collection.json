@@ -128,22 +128,25 @@
 			"request": {
 				"method": "PATCH",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"profesorId\": 1,\r\n    \"evaluacionId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "{{url_base}}/profesores/:id/asignar-evaluador/:id",
+					"raw": "{{url_base}}/profesores/1/asignar-evaluador/1",
 					"host": [
 						"{{url_base}}"
 					],
 					"path": [
 						"profesores",
-						":id",
+						"1",
 						"asignar-evaluador",
-						":id"
-					],
-					"variable": [
-						{
-							"key": "id",
-							"value": ""
-						}
+						"1"
 					]
 				}
 			},
@@ -202,21 +205,15 @@
 				"method": "PATCH",
 				"header": [],
 				"url": {
-					"raw": "{{url_base}}/profesores/:id/asignar-evaluador/:id",
+					"raw": "{{url_base}}/profesores/2/asignar-evaluador/1",
 					"host": [
 						"{{url_base}}"
 					],
 					"path": [
 						"profesores",
-						":id",
+						"2",
 						"asignar-evaluador",
-						":id"
-					],
-					"variable": [
-						{
-							"key": "id",
-							"value": ""
-						}
+						"1"
 					]
 				}
 			},
