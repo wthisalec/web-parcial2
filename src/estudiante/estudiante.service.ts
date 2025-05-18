@@ -1,8 +1,9 @@
+import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Long, Repository } from 'typeorm';
 import { EstudianteEntity } from './estudiante.entity';
 
-
+@Injectable()
 export class EstudianteService {
 
     constructor(
